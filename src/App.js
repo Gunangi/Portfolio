@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
+import { onAuthStateChanged } from 'firebase/auth'; // Only onAuthStateChanged is needed from firebase/auth here
 
+import { db, auth, initializeAuth } from './firebase'; // Import from your new firebase.js
 import FirebaseContext from './context/FirebaseContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,75 +13,27 @@ import Contact from './components/Contact';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode as per images
-  const [db, setDb] = useState(null);
-  const [auth, setAuth] = useState(null);
   const [userId, setUserId] = useState(null);
   const [isAuthReady, setIsAuthReady] = useState(false);
 
   // Initialize Firebase and set up auth listener
   useEffect(() => {
-    try {
-      // Firebase configuration from global variable
-      const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-      const app = initializeApp(firebaseConfig);
-      const firestoreDb = getFirestore(app);
-      const firebaseAuth = getAuth(app);
-
-      setDb(firestoreDb);
-      setAuth(firebaseAuth);
-
-      // Sign in with custom token if available, otherwise anonymously
-      const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-      if (initialAuthToken) {
-        signInWithCustomToken(firebaseAuth, initialAuthToken)
-          .then((userCredential) => {
-            setUserId(userCredential.user.uid);
-            setIsAuthReady(true);
-            console.log("Signed in with custom token:", userCredential.user.uid);
-          })
-          .catch((error) => {
-            console.error("Error signing in with custom token:", error);
-            signInAnonymously(firebaseAuth)
-              .then((userCredential) => {
-                setUserId(userCredential.user.uid);
-                setIsAuthReady(true);
-                console.log("Signed in anonymously (fallback):", userCredential.user.uid);
-              })
-              .catch((anonError) => {
-                console.error("Error signing in anonymously:", anonError);
-                setIsAuthReady(true); // Still set ready even if auth fails
-              });
-          });
-      } else {
-        signInAnonymously(firebaseAuth)
-          .then((userCredential) => {
-            setUserId(userCredential.user.uid);
-            setIsAuthReady(true);
-            console.log("Signed in anonymously:", userCredential.user.uid);
-          })
-          .catch((error) => {
-            console.error("Error signing in anonymously:", error);
-            setIsAuthReady(true); // Still set ready even if auth fails
-          });
-      }
-
-      // Listen for auth state changes
-      const unsubscribe = onAuthStateChanged(firebaseAuth, (user) => {
+    // Perform initial authentication
+    initializeAuth().then(() => {
+      // Listen for auth state changes after initial auth attempt
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
           setUserId(user.uid);
         } else {
           setUserId(null);
         }
-        setIsAuthReady(true);
+        setIsAuthReady(true); // Set auth ready after the first auth state is determined
       });
-
       return () => unsubscribe(); // Cleanup auth listener on unmount
-
-    } catch (error) {
-      console.error("Failed to initialize Firebase:", error);
+    }).catch(error => {
+      console.error("Error during Firebase initialization or initial auth:", error);
       setIsAuthReady(true); // Ensure app can still render even if Firebase init fails
-    }
+    });
   }, []); // Empty dependency array ensures this runs once on mount
 
   const toggleDarkMode = () => {

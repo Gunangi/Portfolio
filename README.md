@@ -2,7 +2,6 @@
 
 Welcome to my dynamic developer portfolio built with a retro command-line interface theme! This project showcases my skills, projects, and professional profile using minimalist, hacker-terminal aesthetics.
 
-![screenshot](screenshot.png)
 
 ---
 

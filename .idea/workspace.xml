@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a1942e10-82ec-4e9d-baf7-8c27030dfda9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +40,10 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -59,6 +66,7 @@
       <updated>1753129632307</updated>
       <workItem from="1753129633793" duration="30000" />
       <workItem from="1753157446723" duration="172000" />
+      <workItem from="1753251943140" duration="411000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dimensions - Full-Stack Developer</title>
+    <meta name="description" content="Full-Stack Web Developer passionate about building beautiful, functional, and user-friendly web applications.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="terminal-prompt">&gt;</span>
+                <span class="logo-text">Dynamic Dimensions</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-minimize"></span>
+                            <span class="btn-maximize"></span>
+                        </div>
+                        <div class="terminal-title">user@portfolio:~$</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">&gt;</span>
+                            <span class="command typing-text" data-text="whoami"></span>
+                        </div>
+                        <div class="terminal-output">
+                            <h1 class="hero-title">
+                                <span class="terminal-prompt">&gt;</span>
+                                Hey, I'm a Full-Stack Web Developer.
+                            </h1>
+                            <p class="hero-description">
+                                I'm passionate about building beautiful, functional,
+                                and user-friendly web applications. With a strong
+                                foundation in modern frontend and backend
+                                technologies, I thrive on bringing ideas to life on
+                                the web.
+                            </p>
+                            
+                            <div class="current-goals">
+                                <h3>Current Goals:</h3>
+                                <ul>
+                                    <li>Mastering advanced Next.js and server components.</li>
+                                    <li>Contributing to open-source UI libraries.</li>
+                                    <li>Exploring the intersection of AI and user experience.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cta-section">
+                                <button class="cta-button" id="recruiter-btn">
+                                    <i class="fas fa-robot"></i>
+                                    Recruiter? Get AI-Suggested Questions
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <h3>My Tech Stack</h3>
+                    <div class="tech-grid">
+                        <div class="tech-category">
+                            <div class="tech-item">JavaScript (ES6+)</div>
+                            <div class="tech-item">TypeScript</div>
+                            <div class="tech-item">HTML5</div>
+                        </div>
+                        <div class="tech-category">
+                            <div class="tech-item">CSS3</div>
+                            <div class="tech-item">Python</div>
+                            <div class="tech-item">React</div>
+                        </div>
+                        <div class="tech-category">
+                            <div class="tech-item">Next.js</div>
+                            <div class="tech-item">Node.js</div>
+                            <div class="tech-item">Express</div>
+                        </div>
+                        <div class="tech-category">
+                            <div class="tech-item">Flask</div>
+                            <div class="tech-item">PostgreSQL</div>
+                            <div class="tech-item">MongoDB</div>
+                        </div>
+                        <div class="tech-category">
+                            <div class="tech-item">Redis</div>
+                            <div class="tech-item">Git</div>
+                            <div class="tech-item">Docker</div>
+                        </div>
+                        <div class="tech-category">
+                            <div class="tech-item">Webpack</div>
+                            <div class="tech-item">Figma</div>
+                            <div class="tech-item">Vercel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>
+                    <span class="terminal-prompt">&gt;</span>
+                    ./Featured-Projects
+                </h2>
+                <p>Here are some of the projects I'm most proud of. Use the filters to explore by technology.</p>
+            </div>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="full-stack">Full-stack</button>
+                <button class="filter-btn" data-filter="react">React</button>
+                <button class="filter-btn" data-filter="nodejs">Node.js</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="data-viz">Data Viz</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="nextjs">Next.js</button>
+                <button class="filter-btn" data-filter="cms">CMS</button>
+                <button class="filter-btn" data-filter="websockets">WebSockets</button>
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>
+                    <span class="terminal-prompt">&gt;</span>
+                    ./Certifications
+                </h2>
+                <p>A testament to my commitment to continuous learning and professional growth.</p>
+            </div>
+            
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Full-Stack Web Development</h3>
+                        <p class="cert-provider">Online Bootcamp - 2023</p>
+                        <a href="#" class="verify-link">
+                            Verify <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>AWS Certified Developer - Associate</h3>
+                        <p class="cert-provider">Amazon Web Services - 2022</p>
+                        <a href="#" class="verify-link">
+                            Verify <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>React - The Complete Guide</h3>
+                        <p class="cert-provider">Udemy - 2023</p>
+                        <a href="#" class="verify-link">
+                            Verify <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Open Source Contributor</h3>
+                        <p class="cert-provider">React Community - 2021</p>
+                        <a href="#" class="verify-link">
+                            Verify <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>
+                    <span class="terminal-prompt">&gt;</span>
+                    ./Get-In-Touch
+                </h2>
+                <p>I'm currently open to new opportunities. Feel free to reach out or check out my profiles. Let's build something amazing together!</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-actions">
+                    <a href="#" class="download-resume" id="download-resume">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Dynamic Dimensions. Built with passion and lots of coffee.</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <span class="close" id="modal-close">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/typing-effect.js"></script>
+    <script src="js/theme-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+/* ===================================
+   Responsive Design Styles
+=================================== */
+
+/* Mobile First Approach - Base styles for mobile */
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+    :root {
+        --font-size-xs: 0.7rem;
+        --font-size-sm: 0.8rem;
+        --font-size-base: 0.9rem;
+        --font-size-lg: 1rem;
+        --font-size-xl: 1.1rem;
+        --font-size-2xl: 1.3rem;
+        --font-size-3xl: 1.6rem;
+        --font-size-4xl: 2rem;
+        --font-size-5xl: 2.5rem;
+        
+        --spacing-xs: 0.2rem;
+        --spacing-sm: 0.4rem;
+        --spacing-md: 0.8rem;
+        --spacing-lg: 1.2rem;
+        --spacing-xl: 1.6rem;
+        --spacing-2xl: 2.4rem;
+        --spacing-3xl: 3.2rem;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+        line-height: 1.2;
+    }
+    
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .tech-stack-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .project-filters {
+        gap: var(--spacing-xs);
+    }
+    
+    .filter-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-xs);
+    }
+    
+    .terminal-window {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .terminal-body {
+        padding: var(--spacing-lg);
+    }
+    
+    .loader-content {
+        min-width: 300px;
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        padding: 0;
+        border: none;
+    }
+    
+    .nav-toggle {
+        display: none;
+    }
+    
+    .tech-stack-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-content {
+        max-width: 700px;
+    }
+    
+    .section-description {
+        max-width: 500px;
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .tech-stack-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Navigation Responsive Behavior */
+@media (max-width: 768px) {
+    .nav-brand {
+        font-size: var(--font-size-base);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: var(--primary-bg);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: var(--spacing-xl);
+        transition: left var(--transition-base);
+        border-top: 1px solid var(--border-color);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .nav-link {
+        display: block;
+        width: 100%;
+        padding: var(--spacing-md);
+        font-size: var(--font-size-lg);
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        font-size: var(--font-size-xl);
+        cursor: pointer;
+        padding: var(--spacing-sm);
+        z-index: 1001;
+    }
+    
+    /* Hamburger Menu Animation */
+    .hamburger {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        position: relative;
+        transition: all var(--transition-base);
+        border-radius: 2px;
+    }
+    
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        border-radius: 2px;
+        transition: all var(--transition-base);
+    }
+    
+    .hamburger::before {
+        top: -8px;
+    }
+    
+    .hamburger::after {
+        top: 8px;
+    }
+    
+    .nav-toggle.active .hamburger {
+        background: transparent;
+    }
+    
+    .nav-toggle.active .hamburger::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .nav-toggle.active .hamburger::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+}
+
+/* Terminal Window Responsive */
+@media (max-width: 768px) {
+    .terminal-header {
+        padding: var(--spacing-sm);
+    }
+    
+    .terminal-title {
+        font-size: var(--font-size-sm);
+    }
+    
+    .control {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .command-line {
+        flex-wrap: wrap;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .prompt,
+    .command {
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Project Card Responsive */
+@media (max-width: 768px) {
+    .project-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .project-placeholder {
+        height: 150px;
+    }
+    
+    .project-dimensions {
+        font-size: var(--font-size-lg);
+    }
+    
+    .project-tech {
+        gap: var(--spacing-xs);
+    }
+    
+    .tech-tag {
+        font-size: var(--font-size-xs);
+        padding: 2px var(--spacing-xs);
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .project-link {
+        text-align: center;
+    }
+}
+
+/* Skills Section Responsive */
+@media (max-width: 768px) {
+    .skill-category {
+        padding: var(--spacing-lg);
+    }
+    
+    .skill-category-title {
+        font-size: var(--font-size-lg);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .skill-category-icon {
+        font-size: var(--font-size-xl);
+    }
+    
+    .skill-name {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+}
+
+/* Contact Section Responsive */
+@media (max-width: 768px) {
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .contact-label {
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: var(--spacing-xs);
+        font-weight: 600;
+    }
+    
+    .social-link {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+    
+    .resume-download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .footer-text {
+        font-size: var(--font-size-xs);
+        line-height: 1.5;
+    }
+    
+    .build-info {
+        display: block;
+        margin-top: var(--spacing-xs);
+    }
+}
+
+/* Loading Screen Responsive */
+@media (max-width: 480px) {
+    .loader-content {
+        min-width: 280px;
+        padding: var(--spacing-md);
+        margin: 0 var(--spacing-sm);
+    }
+    
+    .terminal-title {
+        font-size: var(--font-size-xs);
+    }
+    
+    .loader-line {
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .section {
+        padding: var(--spacing-xl) 0;
+        min-height: auto;
+    }
+    
+    .home-section {
+        padding-top: calc(var(--header-height) + var(--spacing-lg));
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-description {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .current-goals {
+        margin: var(--spacing-lg) 0;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    .tech-item,
+    .project-card,
+    .skill-category,
+    .cert-card {
+        border-width: 0.5px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    .header,
+    .nav,
+    .terminal-controls,
+    .cta-buttons,
+    .project-links,
+    .social-links,
+    .resume-download-btn {
+        display: none !important;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+    
+    .project-card,
+    .skill-category,
+    .cert-card {
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .cursor,
+    .terminal-cursor {
+        animation: none;
+    }
+    
+    .floating,
+    .pulse,
+    .bounce-hover {
+        animation: none;
+    }
+}
+
+/* Focus Indicators for Keyboard Navigation */
+@media (any-hover: none) {
+    .nav-link:focus,
+    .cta-button:focus,
+    .filter-btn:focus,
+    .project-link:focus,
+    .contact-value:focus,
+    .social-link:focus,
+    .resume-download-btn:focus {
+        outline: 2px solid var(--accent-green);
+        outline-offset: 2px;
+    }
+}
+
+/* Dark Mode Specific Responsive Adjustments */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: #0a0e1a;
+        --secondary-bg: #1a1a2e;
+        --text-primary: #39ff14;
+        --text-secondary: #8892b0;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #ffffff;
+        --text-secondary: #ffffff;
+        --accent-green: #00ff00;
+    }
+    
+    .tech-item,
+    .project-card,
+    .skill-category,
+    .cert-card {
+        border-width: 2px;
+    }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "category": "Frontend Development",
+    "icon": "🎨",
+    "skills": [
+      { "name": "HTML5/CSS3", "level": "Expert", "progress": 95 },
+      { "name": "JavaScript (ES6+)", "level": "Advanced", "progress": 90 },
+      { "name": "React.js", "level": "Advanced", "progress": 88 },
+      { "name": "Next.js", "level": "Advanced", "progress": 85 },
+      { "name": "TypeScript", "level": "Intermediate", "progress": 78 },
+      { "name": "Tailwind CSS", "level": "Advanced", "progress": 90 },
+      { "name": "Sass/SCSS", "level": "Advanced", "progress": 85 },
+      { "name": "Responsive Design", "level": "Expert", "progress": 95 },
+      { "name": "CSS Grid & Flexbox", "level": "Expert", "progress": 95 },
+      { "name": "Web Accessibility", "level": "Intermediate", "progress": 75 }
+    ]
+  },
+  {
+    "category": "Backend Development",
+    "icon": "⚙️",
+    "skills": [
+      { "name": "Node.js", "level": "Advanced", "progress": 85 },
+      { "name": "Express.js", "level": "Advanced", "progress": 82 },
+      { "name": "Python", "level": "Intermediate", "progress": 75 },
+      { "name": "Django", "level": "Intermediate", "progress": 70 },
+      { "name": "Flask", "level": "Intermediate", "progress": 68 },
+      { "name": "RESTful APIs", "level": "Advanced", "progress": 90 },
+      { "name": "GraphQL", "level": "Beginner", "progress": 55 },
+      { "name": "JWT Authentication", "level": "Advanced", "progress": 80 },
+      { "name": "Socket.io", "level": "Intermediate", "progress": 75 },
+      { "name": "Microservices", "level": "Beginner", "progress": 50 }
+    ]
+  },
+  {
+    "category": "Database & Storage",
+    "icon": "🗄️",
+    "skills": [
+      { "name": "MongoDB", "level": "Advanced", "progress": 85 },
+      { "name": "PostgreSQL", "level": "Intermediate", "progress": 75 },
+      { "name": "MySQL", "level": "Intermediate", "progress": 70 },
+      { "name": "Redis", "level": "Beginner", "progress": 60 },
+      { "name": "Mongoose ODM", "level": "Advanced", "progress": 80 },
+      { "name": "Prisma ORM", "level": "Intermediate", "progress": 70 },
+      { "name": "Database Design", "level": "Intermediate", "progress": 75 },
+      { "name": "Query Optimization", "level": "Beginner", "progress": 55 },
+      { "name": "Firebase", "level": "Intermediate", "progress": 72 },
+      { "name": "Supabase", "level": "Beginner", "progress": 58 }
+    ]
+  },
+  {
+    "category": "DevOps & Tools",
+    "icon": "🛠️",
+    "skills": [
+      { "name": "Git/GitHub", "level": "Advanced", "progress": 90 },
+      { "name": "Docker", "level": "Intermediate", "progress": 65 },
+      { "name": "AWS", "level": "Beginner", "progress": 55 },
+      { "name": "Vercel", "level": "Advanced", "progress": 85 },
+      { "name": "Netlify", "level": "Advanced", "progress": 80 },
+      { "name": "Heroku", "level": "Intermediate", "progress": 70 },
+      { "name": "CI/CD", "level": "Beginner", "progress": 50 },
+      { "name": "Webpack", "level": "Intermediate", "progress": 65 },
+      { "name": "Vite", "level": "Intermediate", "progress": 75 },
+      { "name": "ESLint/Prettier", "level": "Advanced", "progress": 85 }
+    ]
+  },
+  {
+    "category": "Testing & Quality",
+    "icon": "🧪",
+    "skills": [
+      { "name": "Jest", "level": "Intermediate", "progress": 70 },
+      { "name": "React Testing Library", "level": "Intermediate", "progress": 68 },
+      { "name": "Cypress", "level": "Beginner", "progress": 55 },
+      { "name": "Unit Testing", "level": "Intermediate", "progress": 72 },
+      { "name": "Integration Testing", "level": "Beginner", "progress": 60 },
+      { "name": "Code Review", "level": "Intermediate", "progress": 75 },
+      { "name": "Debugging", "level": "Advanced", "progress": 85 },
+      { "name": "Performance Testing", "level": "Beginner", "progress": 50 },
+      { "name": "Postman", "level": "Advanced", "progress": 80 },
+      { "name": "Browser DevTools", "level": "Advanced", "progress": 90 }
+    ]
+  },
+  {
+    "category": "Design & UI/UX",
+    "icon": "🎭",
+    "skills": [
+      { "name": "Figma", "level": "Intermediate", "progress": 75 },
+      { "name": "Adobe XD", "level": "Beginner", "progress": 60 },
+      { "name": "UI/UX Design", "level": "Intermediate", "progress": 70 },
+      { "name": "Wireframing", "level": "Intermediate", "progress": 68 },
+      { "name": "Prototyping", "level": "Intermediate", "progress": 65 },
+      { "name": "Color Theory", "level": "Intermediate", "progress": 70 },
+      { "name": "Typography", "level": "Intermediate", "progress": 72 },
+      { "name": "User Research", "level": "Beginner", "progress": 55 },
+      { "name": "Design Systems", "level": "Intermediate", "progress": 65 },
+      { "name": "Mobile-First Design", "level": "Advanced", "progress": 85 }
+    ]
+  }
+]

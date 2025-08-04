@@ -1,11 +1,11 @@
 // ===================================
-// Main Portfolio JavaScript
+// Main Portfolio JavaScript - Multi-Page Version
 // ===================================
 
 // Global state and configuration
 const PortfolioApp = {
     isLoaded: false,
-    currentSection: 'home',
+    currentPage: '',
     techStack: [
         'JavaScript', 'TypeScript', 'React', 'Node.js', 'Express',
         'MongoDB', 'PostgreSQL', 'Python', 'Django', 'Next.js',
@@ -45,17 +45,16 @@ function throttle(func, limit) {
     }
 }
 
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        const headerHeight = document.getElementById('header').offsetHeight;
-        const targetPosition = section.offsetTop - headerHeight;
-        
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    }
+// Page navigation function
+function navigateToPage(page) {
+    // Add loading animation
+    const body = document.body;
+    body.style.opacity = '0.8';
+    body.style.transition = 'opacity 0.3s ease';
+    
+    setTimeout(() => {
+        window.location.href = page;
+    }, 150);
 }
 
 function downloadResume() {
@@ -91,6 +90,12 @@ function populateTechStack() {
             <span class="tech-name">${tech}</span>
         </div>
     `).join('');
+}
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    const page = path.split('/').pop() || 'index.html';
+    return page.replace('.html', '') || 'index';
 }
 
 // ===================================
@@ -403,55 +408,29 @@ function setupNavigation() {
         });
     }
     
-    // Navigation link handlers
+    // Navigation link handlers - Updated for multi-page
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
+            const href = link.getAttribute('href');
             
-            // Update active states
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-            
-            // Close mobile menu
-            if (navMenu) navMenu.classList.remove('active');
-            if (navToggle) navToggle.classList.remove('active');
-            
-            // Scroll to section
-            scrollToSection(targetId);
-            PortfolioApp.currentSection = targetId;
-        });
-    });
-}
-
-function setupScrollSpy() {
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    const observerOptions = {
-        threshold: 0.3,
-        rootMargin: '-80px 0px -80px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const sectionId = entry.target.id;
+            // If it's a same-page anchor, prevent default and scroll
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                scrollToSection(targetId);
+            } else {
+                // For other pages, add transition effect
+                e.preventDefault();
                 
-                // Update nav active states
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
+                // Close mobile menu
+                if (navMenu) navMenu.classList.remove('active');
+                if (navToggle) navToggle.classList.remove('active');
                 
-                PortfolioApp.currentSection = sectionId;
+                // Navigate to page with transition
+                navigateToPage(href);
             }
         });
-    }, observerOptions);
-    
-    sections.forEach(section => observer.observe(section));
+    });
 }
 
 function setupThemeToggle() {
@@ -484,6 +463,8 @@ function setupThemeToggle() {
 
 function setupHeaderHide() {
     const header = document.getElementById('header');
+    if (!header) return;
+    
     let lastScrollY = window.scrollY;
     
     const handleScroll = throttle(() => {
@@ -506,6 +487,62 @@ function setupHeaderHide() {
 }
 
 // ===================================
+// Contact Form Functions
+// ===================================
+
+function sendMessage() {
+    const name = document.getElementById('contact-name')?.value;
+    const email = document.getElementById('contact-email')?.value;
+    const subject = document.getElementById('contact-subject')?.value;
+    const message = document.getElementById('contact-message')?.value;
+    
+    if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    // Here you would typically send the form data to your backend
+    // For now, we'll just show a success message
+    console.log('Form data:', { name, email, subject, message });
+    alert('Message sent successfully! I\'ll get back to you soon.');
+    
+    clearForm();
+}
+
+function clearForm() {
+    const inputs = ['contact-name', 'contact-email', 'contact-subject', 'contact-message'];
+    inputs.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.value = '';
+    });
+}
+
+// ===================================
+// Animation Functions
+// ===================================
+
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-value[data-count]');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+        }, 16);
+    });
+}
+
+// ===================================
 // Loading Screen
 // ===================================
 
@@ -522,7 +559,34 @@ function hideLoadingScreen() {
 }
 
 // ===================================
-// Initialization
+// Page-Specific Initialization
+// ===================================
+
+function initializeHomePage() {
+    populateTechStack();
+    // Add any home-specific initializations here
+}
+
+function initializeProjectsPage() {
+    loadProjects();
+    setupProjectFilters();
+}
+
+function initializeSkillsPage() {
+    loadSkills();
+}
+
+function initializeCertificationsPage() {
+    loadCertifications();
+}
+
+function initializeContactPage() {
+    animateCounters();
+    // Add any contact-specific initializations here
+}
+
+// ===================================
+// Main Initialization
 // ===================================
 
 async function initializeApp() {
@@ -532,24 +596,38 @@ async function initializeApp() {
         // Update last updated date
         updateLastUpdated();
         
-        // Populate tech stack
-        populateTechStack();
+        // Get current page
+        PortfolioApp.currentPage = getCurrentPage();
+        console.log('Current page:', PortfolioApp.currentPage);
         
-        // Load data
-        await Promise.all([
-            loadProjects(),
-            loadSkills(),
-            loadCertifications()
-        ]);
-        
-        // Setup event handlers
+        // Setup common event handlers
         setupNavigation();
-        setupScrollSpy();
-        setupProjectFilters();
         setupThemeToggle();
         setupHeaderHide();
         
-        // Hide loading screen
+        // Page-specific initialization
+        switch (PortfolioApp.currentPage) {
+            case 'index':
+                initializeHomePage();
+                break;
+            case 'projects':
+                initializeProjectsPage();
+                break;
+            case 'skills':
+                initializeSkillsPage();
+                break;
+            case 'certifications':
+                initializeCertificationsPage();
+                break;
+            case 'contact':
+                initializeContactPage();
+                break;
+            default:
+                console.log('Unknown page, using default initialization');
+                break;
+        }
+        
+        // Hide loading screen (only for home page or if present)
         hideLoadingScreen();
         
         PortfolioApp.isLoaded = true;
@@ -565,8 +643,10 @@ async function initializeApp() {
 // ===================================
 
 // Make functions globally available
-window.scrollToSection = scrollToSection;
+window.navigateToPage = navigateToPage;
 window.downloadResume = downloadResume;
+window.sendMessage = sendMessage;
+window.clearForm = clearForm;
 
 // ===================================
 // App Start

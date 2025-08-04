@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Full Stack Web Development",
+    "issuer": "FreeCodeCamp",
+    "date": "2024",
+    "icon": "🏆",
+    "description": "Comprehensive certification covering HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and database management. Completed 300+ coding challenges and 5 comprehensive projects.",
+    "verifyUrl": "https://freecodecamp.org/certification/gunangi/full-stack",
+    "skills": ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "MongoDB", "Express"],
+    "category": "Full-Stack Development"
+  },
+  {
+    "id": 2,
+    "title": "JavaScript Algorithms and Data Structures",
+    "issuer": "FreeCodeCamp",
+    "date": "2024",
+    "icon": "🧮",
+    "description": "Advanced JavaScript concepts including ES6+ features, algorithms, data structures, functional programming, and object-oriented programming principles.",
+    "verifyUrl": "https://freecodecamp.org/certification/gunangi/javascript-algorithms-and-data-structures",
+    "skills": ["JavaScript", "Algorithms", "Data Structures", "ES6+", "Functional Programming"],
+    "category": "Programming Fundamentals"
+  },
+  {
+    "id": 3,
+    "title": "React Developer Certification",
+    "issuer": "Meta (Facebook)",
+    "date": "2024",
+    "icon": "⚛️",
+    "description": "Professional certification in React development covering hooks, state management, component lifecycle, testing, and advanced React patterns and best practices.",
+    "verifyUrl": "https://coursera.org/verify/professional-cert/react-meta",
+    "skills": ["React", "JSX", "Hooks", "State Management", "Component Design", "Testing"],
+    "category": "Frontend Development"
+  },
+  {
+    "id": 4,
+    "title": "Responsive Web Design",
+    "issuer": "FreeCodeCamp",
+    "date": "2023",
+    "icon": "📱",
+    "description": "Comprehensive training in responsive web design principles, CSS Grid, Flexbox, media queries, and accessibility standards for modern web development.",
+    "verifyUrl": "https://freecodecamp.org/certification/gunangi/responsive-web-design",
+    "skills": ["HTML5", "CSS3", "Responsive Design", "CSS Grid", "Flexbox", "Accessibility"],
+    "category": "Frontend Development"
+  },
+  {
+    "id": 5,
+    "title": "Node.js Application Development",
+    "issuer": "IBM",
+    "date": "2024",
+    "icon": "🚀",
+    "description": "Professional certification in Node.js development including Express.js, REST APIs, authentication, database integration, and deployment strategies.",
+    "verifyUrl": "https://coursera.org/verify/specialization/nodejs-ibm",
+    "skills": ["Node.js", "Express.js", "REST APIs", "Authentication", "Database Integration"],
+    "category": "Backend Development"
+  },
+  {
+    "id": 6,
+    "title": "MongoDB Developer Certification",
+    "issuer": "MongoDB University",
+    "date": "2024",
+    "icon": "🍃",
+    "description": "Professional certification covering MongoDB fundamentals, aggregation framework, indexing strategies, data modeling, and performance optimization.",
+    "verifyUrl": "https://university.mongodb.com/certification/developer",
+    "skills": ["MongoDB", "NoSQL", "Data Modeling", "Aggregation", "Indexing", "Performance"],
+    "category": "Database Management"
+  },
+  {
+    "id": 7,
+    "title": "Git and GitHub Essentials",
+    "issuer": "GitHub",
+    "date": "2023",
+    "icon": "🔧",
+    "description": "Comprehensive training in version control systems, Git workflows, collaborative development, branching strategies, and GitHub best practices.",
+    "verifyUrl": "https://github.com/settings/profile",
+    "skills": ["Git", "GitHub", "Version Control", "Collaboration", "Branching", "Merging"],
+    "category": "Development Tools"
+  },
+  {
+    "id": 8,
+    "title": "Web Security Fundamentals",
+    "issuer": "OWASP",
+    "date": "2024",
+    "icon": "🔒",
+    "description": "Essential web security practices including authentication, authorization, data validation, HTTPS, and protection against common vulnerabilities.",
+    "verifyUrl": "https://owasp.org/certification/web-security",
+    "skills": ["Web Security", "Authentication", "Authorization", "HTTPS", "Data Validation"],
+    "category": "Security"
+  },
+  {
+    "id": 9,
+    "title": "Agile Development Practices",
+    "issuer": "Scrum Alliance",
+    "date": "2024",
+    "icon": "🔄",
+    "description": "Training in Agile methodologies, Scrum framework, sprint planning, user stories, and collaborative development practices for efficient project delivery.",
+    "verifyUrl": "https://scrumalliance.org/certification/verify",
+    "skills": ["Agile", "Scrum", "Sprint Planning", "User Stories", "Team Collaboration"],
+    "category": "Project Management"
+  },
+  {
+    "id": 10,
+    "title": "TypeScript Fundamentals",
+    "issuer": "Microsoft",
+    "date": "2024",
+    "icon": "📘",
+    "description": "Comprehensive TypeScript training covering type systems, interfaces, generics, decorators, and advanced TypeScript features for scalable applications.",
+    "verifyUrl": "https://learn.microsoft.com/certifications/typescript",
+    "skills": ["TypeScript", "Type Systems", "Interfaces", "Generics", "Decorators"],
+    "category": "Programming Languages"
+  }
+]

@@ -1,0 +1,200 @@
+/* ===================================
+   CSS Fixes for Portfolio Issues
+   Add these styles to your existing CSS or create a new file
+=================================== */
+
+/* 1. Fix the overly bright "Full-Stack Developer" text */
+.title-line.highlight {
+    color: rgba(57, 255, 20, 0.8); /* Reduced opacity from full brightness */
+    position: relative;
+    text-shadow: none; /* Remove any existing text shadow */
+}
+
+/* Reduce glow effect in dark mode */
+.hero-title .title-line.highlight {
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.2); /* Much subtler glow */
+}
+
+/* 2. Fix header visibility in light mode */
+[data-theme="light"] .header {
+    background: rgba(248, 250, 252, 0.95); /* Light background with opacity */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(30, 41, 59, 0.2);
+}
+
+[data-theme="light"] .nav-brand .terminal-prompt {
+    color: #1e293b; /* Dark color for light mode */
+}
+
+[data-theme="light"] .nav-brand .brand-text {
+    color: #1e293b; /* Dark color for light mode */
+}
+
+[data-theme="light"] .nav-link {
+    color: #475569; /* Better contrast in light mode */
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+    color: #1e293b;
+    background: rgba(30, 41, 59, 0.1);
+}
+
+[data-theme="light"] .theme-toggle {
+    border-color: rgba(30, 41, 59, 0.3);
+    color: #1e293b;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    border-color: #1e293b;
+    box-shadow: 0 0 5px rgba(30, 41, 59, 0.2);
+}
+
+[data-theme="light"] .nav-toggle {
+    color: #1e293b;
+}
+
+[data-theme="light"] .hamburger,
+[data-theme="light"] .hamburger::before,
+[data-theme="light"] .hamburger::after {
+    background: #1e293b;
+}
+
+/* 3. Fix "Full-Stack Developer" appearance in light mode */
+[data-theme="light"] .title-line.highlight {
+    color: #059669; /* A more pleasant green for light mode */
+    text-shadow: none; /* No glow effect in light mode */
+    font-weight: 600; /* Slightly less bold */
+}
+
+/* Additional improvements for light mode readability */
+[data-theme="light"] .hero-title {
+    color: #1e293b;
+}
+
+[data-theme="light"] .hero-description {
+    color: #475569;
+}
+
+[data-theme="light"] .goals-title {
+    color: #1e293b;
+}
+
+[data-theme="light"] .goals-list li {
+    color: #475569;
+}
+
+[data-theme="light"] .goals-list li::before {
+    color: #059669; /* Match the highlight color */
+}
+
+/* Ensure terminal windows are visible in light mode */
+[data-theme="light"] .terminal-window {
+    background: rgba(226, 232, 240, 0.9);
+    border-color: rgba(30, 41, 59, 0.2);
+}
+
+[data-theme="light"] .terminal-title {
+    color: #1e293b;
+}
+
+[data-theme="light"] .prompt {
+    color: #059669; /* Match the accent color */
+}
+
+[data-theme="light"] .command {
+    color: #1e293b;
+}
+
+[data-theme="light"] .cursor {
+    color: #059669;
+}
+
+/* Fix tech stack items in light mode */
+[data-theme="light"] .tech-item {
+    background: rgba(30, 41, 59, 0.05);
+    border-color: rgba(30, 41, 59, 0.2);
+    color: #1e293b;
+}
+
+[data-theme="light"] .tech-item:hover {
+    background: rgba(30, 41, 59, 0.1);
+    border-color: #059669;
+    box-shadow: 0 0 5px rgba(5, 150, 105, 0.2);
+}
+
+[data-theme="light"] .tech-item::before {
+    background: #059669;
+}
+
+/* Improve button appearance in light mode */
+[data-theme="light"] .cta-button {
+    border-color: rgba(30, 41, 59, 0.3);
+    color: #1e293b;
+}
+
+[data-theme="light"] .cta-button.primary {
+    border-color: #059669;
+    color: #059669;
+}
+
+[data-theme="light"] .cta-button:hover {
+    box-shadow: 0 0 10px rgba(5, 150, 105, 0.2);
+}
+
+[data-theme="light"] .cta-button.primary:hover {
+    background: #059669;
+    color: white;
+}
+
+/* Reduce overall brightness of green elements in dark mode */
+:root {
+    --accent-green-dimmed: rgba(57, 255, 20, 0.8);
+    --accent-green-subtle: rgba(57, 255, 20, 0.6);
+}
+
+/* Apply dimmed green to various elements */
+.terminal-cursor {
+    background-color: var(--accent-green-dimmed);
+}
+
+.nav-link::before {
+    background: var(--accent-green-dimmed);
+}
+
+.skill-progress {
+    background: linear-gradient(90deg, var(--accent-green-dimmed), rgba(0, 255, 65, 0.8));
+}
+
+/* Subtle neon effect - much less intense */
+.neon-text {
+    text-shadow: 
+        0 0 2px var(--accent-green-subtle),
+        0 0 4px var(--accent-green-subtle);
+}
+
+/* Remove aggressive glows from various elements */
+.project-card:hover,
+.skill-category:hover,
+.cert-card:hover {
+    box-shadow: 0 4px 12px rgba(57, 255, 20, 0.15); /* Much subtler glow */
+}
+
+/* Tone down terminal glow */
+.terminal-window:hover {
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.2); /* Reduced from 0.6 */
+}
+
+/* Make loading dots less intense */
+.loading-dots span {
+    background-color: var(--accent-green-dimmed);
+}
+
+/* Subtle improvements for overall eye comfort */
+.terminal-window {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .terminal-window {
+    box-shadow: 0 2px 8px rgba(30, 41, 59, 0.1);
+}

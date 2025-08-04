@@ -37,11 +37,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2339ff14' d='M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z'/%3E%3C/svg%3E">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="data/projects.json" as="fetch" crossorigin>
-    <link rel="preload" href="data/skills.json" as="fetch" crossorigin>
-    <link rel="preload" href="data/certifications.json" as="fetch" crossorigin>
-    
     <!-- Theme Color -->
     <meta name="theme-color" content="#0a0e1a">
     <meta name="msapplication-navbutton-color" content="#0a0e1a">
@@ -81,27 +76,27 @@
             
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link active">
+                    <a href="index.html" class="nav-link active">
                         <span class="nav-command">./home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#projects" class="nav-link">
+                    <a href="projects.html" class="nav-link">
                         <span class="nav-command">./projects</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#skills" class="nav-link">
+                    <a href="skills.html" class="nav-link">
                         <span class="nav-command">./skills</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#certifications" class="nav-link">
+                    <a href="certifications.html" class="nav-link">
                         <span class="nav-command">./certs</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">
+                    <a href="contact.html" class="nav-link">
                         <span class="nav-command">./contact</span>
                     </a>
                 </li>
@@ -166,7 +161,7 @@
                                     </div>
                                     
                                     <div class="cta-buttons">
-                                        <button class="cta-button primary" onclick="scrollToSection('projects')" aria-label="View my projects">
+                                        <button class="cta-button primary" onclick="navigateToPage('projects.html')" aria-label="View my projects">
                                             <span class="button-text">$ ./view_projects</span>
                                         </button>
                                         <button class="cta-button secondary" onclick="downloadResume()" aria-label="Download my resume">
@@ -187,218 +182,6 @@
                     </div>
                     <div class="tech-stack-grid" id="tech-stack">
                         <!-- Will be populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="section projects-section" id="projects">
-            <div class="container">
-                <div class="section-header">
-                    <div class="command-line">
-                        <span class="prompt">$ </span>
-                        <span class="command">cd ./featured_projects && ls -la --sort=date</span>
-                    </div>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-description">
-                        Here are some of the projects I'm most proud of. Each one represents a unique challenge 
-                        and demonstrates different aspects of my technical expertise. Use the filters below to explore by technology.
-                    </p>
-                </div>
-
-                <!-- Project Filters -->
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all" aria-label="Show all projects">All</button>
-                    <button class="filter-btn" data-filter="full-stack" aria-label="Show full-stack projects">Full-stack</button>
-                    <button class="filter-btn" data-filter="react" aria-label="Show React projects">React</button>
-                    <button class="filter-btn" data-filter="node" aria-label="Show Node.js projects">Node.js</button>
-                    <button class="filter-btn" data-filter="python" aria-label="Show Python projects">Python</button>
-                    <button class="filter-btn" data-filter="nextjs" aria-label="Show Next.js projects">Next.js</button>
-                </div>
-
-                <!-- Projects Grid -->
-                <div class="projects-grid" id="projects-grid">
-                    <!-- Projects will be loaded dynamically -->
-                    <div class="loading-placeholder">
-                        <div class="command-line">
-                            <span class="prompt">$ </span>
-                            <span class="command">Loading projects<span class="dots">...</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="section skills-section" id="skills">
-            <div class="container">
-                <div class="section-header">
-                    <div class="command-line">
-                        <span class="prompt">$ </span>
-                        <span class="command">cat skills.json | jq '.[] | select(.proficiency >= "intermediate")'</span>
-                    </div>
-                    <h2 class="section-title">Technical Skills</h2>
-                    <p class="section-description">
-                        A comprehensive overview of my technical expertise and proficiency levels across 
-                        frontend, backend, database technologies, and development tools.
-                    </p>
-                </div>
-
-                <div class="skills-container" id="skills-container">
-                    <!-- Skills will be loaded dynamically -->
-                    <div class="loading-placeholder">
-                        <div class="command-line">
-                            <span class="prompt">$ </span>
-                            <span class="command">Compiling skill matrix<span class="dots">...</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section class="section certifications-section" id="certifications">
-            <div class="container">
-                <div class="section-header">
-                    <div class="command-line">
-                        <span class="prompt">$ </span>
-                        <span class="command">find ./certifications -name "*.cert" -exec cat {} \; | sort -k3</span>
-                    </div>
-                    <h2 class="section-title">Certifications & Learning</h2>
-                    <p class="section-description">
-                        Professional certifications and continuous learning initiatives that demonstrate my 
-                        commitment to staying current with industry best practices and emerging technologies.
-                    </p>
-                </div>
-
-                <div class="certifications-grid" id="certifications-grid">
-                    <!-- Certifications will be loaded dynamically -->
-                    <div class="loading-placeholder">
-                        <div class="command-line">
-                            <span class="prompt">$ </span>
-                            <span class="command">Validating certificates<span class="dots">...</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section contact-section" id="contact">
-            <div class="container">
-                <div class="section-header">
-                    <div class="command-line">
-                        <span class="prompt">$ </span>
-                        <span class="command">./get_in_touch --interactive --verbose</span>
-                    </div>
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-description">
-                        I'm currently open to new opportunities and exciting projects. Feel free to reach out 
-                        for collaborations, job opportunities, or just to connect. Let's build something amazing together!
-                    </p>
-                </div>
-
-                <div class="contact-content">
-                    <div class="contact-terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-controls">
-                                <span class="control close" title="Close"></span>
-                                <span class="control minimize" title="Minimize"></span>
-                                <span class="control maximize" title="Maximize"></span>
-                            </div>
-                            <span class="terminal-title">contact@gunangi-portfolio:~$</span>
-                        </div>
-                        
-                        <div class="terminal-body">
-                            <div class="contact-commands">
-                                <div class="command-output">
-                                    <div class="command-line">
-                                        <span class="prompt">$ </span>
-                                        <span class="command">echo $CONTACT_INFO</span>
-                                    </div>
-                                    <div class="contact-info">
-                                        <div class="contact-item">
-                                            <span class="contact-label">email:</span>
-                                            <a href="mailto:gunangi.bhagat@example.com" class="contact-value">gunangi.bhagat@example.com</a>
-                                        </div>
-                                        <div class="contact-item">
-                                            <span class="contact-label">location:</span>
-                                            <span class="contact-value">Nagpur, Maharashtra, India</span>
-                                        </div>
-                                        <div class="contact-item">
-                                            <span class="contact-label">timezone:</span>
-                                            <span class="contact-value">IST (UTC+5:30)</span>
-                                        </div>
-                                        <div class="contact-item">
-                                            <span class="contact-label">status:</span>
-                                            <span class="contact-value status-available">Available for opportunities</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="command-output">
-                                    <div class="command-line">
-                                        <span class="prompt">$ </span>
-                                        <span class="command">ls -la social_links/</span>
-                                    </div>
-                                    <div class="social-links">
-                                        <a href="https://github.com/Gunangi" target="_blank" rel="noopener noreferrer" class="social-link">
-                                            <span class="link-icon">📁</span>
-                                            <span class="link-text">github.com/Gunangi</span>
-                                        </a>
-                                        <a href="https://linkedin.com/in/gunangi-bhagat" target="_blank" rel="noopener noreferrer" class="social-link">
-                                            <span class="link-icon">💼</span>
-                                            <span class="link-text">linkedin.com/in/gunangi-bhagat</span>
-                                        </a>
-                                        <a href="https://twitter.com/gunangi_bhagat" target="_blank" rel="noopener noreferrer" class="social-link">
-                                            <span class="link-icon">🐦</span>
-                                            <span class="link-text">twitter.com/gunangi_bhagat</span>
-                                        </a>
-                                        <a href="mailto:gunangi.bhagat@example.com" class="social-link">
-                                            <span class="link-icon">📧</span>
-                                            <span class="link-text">Send Email</span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="command-output">
-                                    <div class="command-line">
-                                        <span class="prompt">$ </span>
-                                        <span class="command">cat quick_stats.txt</span>
-                                    </div>
-                                    <div class="quick-stats">
-                                        <div class="stat-item">
-                                            <span class="stat-label">Projects Completed:</span>
-                                            <span class="stat-value" data-count="25">0</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-label">GitHub Repositories:</span>
-                                            <span class="stat-value" data-count="40">0</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-label">Years of Experience:</span>
-                                            <span class="stat-value" data-count="3">0</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-label">Technologies Mastered:</span>
-                                            <span class="stat-value" data-count="15">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="download-resume">
-                                <div class="command-line">
-                                    <span class="prompt">$ </span>
-                                    <span class="command">wget resume.pdf --progress=bar</span>
-                                </div>
-                                <button class="resume-download-btn" onclick="downloadResume()" aria-label="Download Gunangi Bhagat's resume">
-                                    <span class="download-icon">⬇</span>
-                                    <span class="download-text">Download Resume (PDF, 2.1MB)</span>
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

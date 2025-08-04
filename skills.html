@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gunangi Bhagat - Technical Skills - Frontend, Backend, Database Technologies">
+    <meta name="keywords" content="web developer skills, technical skills, programming languages, frameworks, tools">
+    <meta name="author" content="Gunangi Bhagat">
+    
+    <title>$ cat skills.json | Gunangi Bhagat - Technical Skills</title>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2339ff14' d='M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z'/%3E%3C/svg%3E">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0e1a">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <span class="terminal-prompt">$</span>
+                <span class="brand-text">gunangi-bhagat</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <span class="nav-command">./home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">
+                        <span class="nav-command">./projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="skills.html" class="nav-link active">
+                        <span class="nav-command">./skills</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="certifications.html" class="nav-link">
+                        <span class="nav-command">./certs</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        <span class="nav-command">./contact</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme" aria-label="Toggle dark/light theme">
+                    <span class="theme-icon">◐</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Skills Section -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="command-line">
+                        <span class="prompt">$ </span>
+                        <span class="command">cat skills.json | jq '.[] | select(.proficiency >= "intermediate")'</span>
+                    </div>
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-description">
+                        A comprehensive overview of my technical expertise and proficiency levels across 
+                        frontend, backend, database technologies, and development tools.
+                    </p>
+                </div>
+
+                <div class="skills-container" id="skills-container">
+                    <!-- Skills will be loaded dynamically -->
+                    <div class="loading-placeholder">
+                        <div class="command-line">
+                            <span class="prompt">$ </span>
+                            <span class="command">Compiling skill matrix<span class="dots">...</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Skills Information -->
+                <div class="skills-extra-info">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control close" title="Close"></span>
+                                <span class="control minimize" title="Minimize"></span>
+                                <span class="control maximize" title="Maximize"></span>
+                            </div>
+                            <span class="terminal-title">skills@additional-info:~$</span>
+                        </div>
+                        
+                        <div class="terminal-body">
+                            <div class="command-line">
+                                <span class="prompt">$ </span>
+                                <span class="command">cat learning_philosophy.txt</span>
+                            </div>
+                            <div class="output">
+                                <p class="philosophy-text">
+                                    I believe in continuous learning and staying up-to-date with the latest technologies. 
+                                    My approach to skill development focuses on understanding core concepts deeply rather than 
+                                    just following trends. This foundation allows me to adapt quickly to new frameworks and tools.
+                                </p>
+                            </div>
+                            
+                            <div class="command-line">
+                                <span class="prompt">$ </span>
+                                <span class="command">ls currently_learning/</span>
+                            </div>
+                            <div class="output">
+                                <div class="learning-items">
+                                    <div class="learning-item">📚 Advanced TypeScript Patterns</div>
+                                    <div class="learning-item">🐳 Docker & Kubernetes</div>
+                                    <div class="learning-item">☁️ AWS Cloud Architecture</div>
+                                    <div class="learning-item">🤖 Machine Learning with Python</div>
+                                    <div class="learning-item">🔐 Cybersecurity Fundamentals</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back to Home Button -->
+                <div class="page-navigation">
+                    <div class="command-line">
+                        <span class="prompt">$ </span>
+                        <span class="command">cd ../</span>
+                    </div>
+                    <button class="cta-button" onclick="navigateToPage('index.html')" aria-label="Back to home">
+                        <span class="button-text">$ cd ~/home</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="command-line">
+                    <span class="prompt">$ </span>
+                    <span class="command">exit 0</span>
+                </div>
+                <p class="footer-text">
+                    Built with ❤️ and lots of ☕ using vanilla JavaScript • 
+                    <span class="build-info">Version: 2.0.0 | Last updated: <span id="last-updated"></span></span>
+                </p>
+                <div class="footer-meta">
+                    <span class="copyright">© 2024 Gunangi Bhagat. All rights reserved.</span>
+                    <span class="tech-note">Designed for modern browsers with JavaScript enabled</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Background Matrix Effect -->
+    <div class="matrix-bg" id="matrix-bg" aria-hidden="true"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html>

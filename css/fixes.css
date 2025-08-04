@@ -1,200 +1,222 @@
 /* ===================================
-   CSS Fixes for Portfolio Issues
-   Add these styles to your existing CSS or create a new file
+   COMPREHENSIVE CSS FIXES - Portfolio Issues
+   Add these styles AFTER your main CSS to ensure proper override
 =================================== */
 
-/* 1. Fix the overly bright "Full-Stack Developer" text */
+/* IMPORTANT: These styles must be loaded AFTER the main CSS files */
+
+/* 1. COMPLETELY REMOVE ALL GLOW EFFECTS FROM "Full-Stack Developer" */
+.title-line.highlight,
+.hero-title .title-line.highlight,
+.title-line.highlight:hover,
+.title-line.highlight:focus {
+    text-shadow: none !important; /* Force remove all text shadows */
+    box-shadow: none !important; /* Remove any box shadows */
+    filter: none !important; /* Remove any filters */
+}
+
+/* 2. DARK MODE - Clean highlighting without glow */
 .title-line.highlight {
-    color: rgba(57, 255, 20, 0.8); /* Reduced opacity from full brightness */
+    color: #39ff14 !important; /* Clean green without transparency */
+    font-weight: 700 !important; /* Bold for emphasis */
+    letter-spacing: 0.8px !important; /* Spacing for distinction */
     position: relative;
-    text-shadow: none; /* Remove any existing text shadow */
+    display: inline-block;
 }
 
-/* Reduce glow effect in dark mode */
-.hero-title .title-line.highlight {
-    text-shadow: 0 0 5px rgba(57, 255, 20, 0.2); /* Much subtler glow */
+/* Add clean underline effect for dark mode */
+.title-line.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #39ff14;
+    opacity: 0.7;
 }
 
-/* 2. Fix header visibility in light mode */
+/* 3. LIGHT MODE - Proper visibility and contrast */
+[data-theme="light"] .title-line.highlight {
+    color: #047857 !important; /* Darker green for light mode */
+    text-shadow: none !important; /* No glow in light mode */
+    font-weight: 600 !important; /* Slightly less bold for light mode */
+    letter-spacing: 0.5px !important;
+}
+
+[data-theme="light"] .title-line.highlight::after {
+    background: #047857 !important; /* Match the text color */
+    opacity: 0.5;
+}
+
+/* 4. FIX HEADER VISIBILITY IN LIGHT MODE */
 [data-theme="light"] .header {
-    background: rgba(248, 250, 252, 0.95); /* Light background with opacity */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(30, 41, 59, 0.2);
+    background: rgba(248, 250, 252, 0.98) !important; /* More opaque background */
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.15) !important;
+    box-shadow: 0 1px 3px rgba(30, 41, 59, 0.1) !important;
 }
 
 [data-theme="light"] .nav-brand .terminal-prompt {
-    color: #1e293b; /* Dark color for light mode */
+    color: #1e293b !important;
+    font-weight: 600;
 }
 
 [data-theme="light"] .nav-brand .brand-text {
-    color: #1e293b; /* Dark color for light mode */
+    color: #1e293b !important;
+    font-weight: 500;
 }
 
 [data-theme="light"] .nav-link {
-    color: #475569; /* Better contrast in light mode */
+    color: #64748b !important;
 }
 
 [data-theme="light"] .nav-link:hover,
 [data-theme="light"] .nav-link.active {
-    color: #1e293b;
-    background: rgba(30, 41, 59, 0.1);
+    color: #1e293b !important;
+    background: rgba(30, 41, 59, 0.08) !important;
+}
+
+[data-theme="light"] .nav-link::before {
+    background: #047857 !important; /* Match accent color */
 }
 
 [data-theme="light"] .theme-toggle {
-    border-color: rgba(30, 41, 59, 0.3);
-    color: #1e293b;
+    border-color: rgba(30, 41, 59, 0.2) !important;
+    color: #1e293b !important;
+    background: rgba(248, 250, 252, 0.8) !important;
 }
 
 [data-theme="light"] .theme-toggle:hover {
-    border-color: #1e293b;
-    box-shadow: 0 0 5px rgba(30, 41, 59, 0.2);
+    border-color: #047857 !important;
+    box-shadow: 0 0 0 2px rgba(4, 120, 87, 0.1) !important;
+    background: rgba(248, 250, 252, 1) !important;
 }
 
 [data-theme="light"] .nav-toggle {
-    color: #1e293b;
+    color: #1e293b !important;
 }
 
 [data-theme="light"] .hamburger,
 [data-theme="light"] .hamburger::before,
 [data-theme="light"] .hamburger::after {
-    background: #1e293b;
+    background: #1e293b !important;
 }
 
-/* 3. Fix "Full-Stack Developer" appearance in light mode */
-[data-theme="light"] .title-line.highlight {
-    color: #059669; /* A more pleasant green for light mode */
-    text-shadow: none; /* No glow effect in light mode */
-    font-weight: 600; /* Slightly less bold */
-}
-
-/* Additional improvements for light mode readability */
+/* 5. IMPROVE LIGHT MODE READABILITY */
 [data-theme="light"] .hero-title {
-    color: #1e293b;
+    color: #1e293b !important;
 }
 
 [data-theme="light"] .hero-description {
-    color: #475569;
+    color: #475569 !important;
 }
 
 [data-theme="light"] .goals-title {
-    color: #1e293b;
+    color: #1e293b !important;
 }
 
 [data-theme="light"] .goals-list li {
-    color: #475569;
+    color: #64748b !important;
 }
 
 [data-theme="light"] .goals-list li::before {
-    color: #059669; /* Match the highlight color */
+    color: #047857 !important;
 }
 
-/* Ensure terminal windows are visible in light mode */
 [data-theme="light"] .terminal-window {
-    background: rgba(226, 232, 240, 0.9);
-    border-color: rgba(30, 41, 59, 0.2);
+    background: rgba(248, 250, 252, 0.95) !important;
+    border-color: rgba(30, 41, 59, 0.15) !important;
+    box-shadow: 0 4px 6px rgba(30, 41, 59, 0.07) !important;
+}
+
+[data-theme="light"] .terminal-header {
+    border-bottom-color: rgba(30, 41, 59, 0.1) !important;
 }
 
 [data-theme="light"] .terminal-title {
-    color: #1e293b;
+    color: #1e293b !important;
 }
 
 [data-theme="light"] .prompt {
-    color: #059669; /* Match the accent color */
+    color: #047857 !important;
 }
 
 [data-theme="light"] .command {
-    color: #1e293b;
+    color: #1e293b !important;
 }
 
 [data-theme="light"] .cursor {
-    color: #059669;
+    color: #047857 !important;
 }
 
-/* Fix tech stack items in light mode */
+/* 6. FIX TECH STACK IN LIGHT MODE */
 [data-theme="light"] .tech-item {
-    background: rgba(30, 41, 59, 0.05);
-    border-color: rgba(30, 41, 59, 0.2);
-    color: #1e293b;
+    background: rgba(248, 250, 252, 0.8) !important;
+    border-color: rgba(30, 41, 59, 0.15) !important;
+    color: #1e293b !important;
 }
 
 [data-theme="light"] .tech-item:hover {
-    background: rgba(30, 41, 59, 0.1);
-    border-color: #059669;
-    box-shadow: 0 0 5px rgba(5, 150, 105, 0.2);
+    background: rgba(4, 120, 87, 0.05) !important;
+    border-color: #047857 !important;
+    box-shadow: 0 2px 4px rgba(4, 120, 87, 0.1) !important;
+    transform: translateY(-1px);
 }
 
 [data-theme="light"] .tech-item::before {
-    background: #059669;
+    background: #047857 !important;
 }
 
-/* Improve button appearance in light mode */
+/* 7. IMPROVE BUTTONS IN LIGHT MODE */
 [data-theme="light"] .cta-button {
-    border-color: rgba(30, 41, 59, 0.3);
-    color: #1e293b;
+    border-color: rgba(30, 41, 59, 0.2) !important;
+    color: #1e293b !important;
+    background: rgba(248, 250, 252, 0.5) !important;
 }
 
 [data-theme="light"] .cta-button.primary {
-    border-color: #059669;
-    color: #059669;
+    border-color: #047857 !important;
+    color: #047857 !important;
 }
 
 [data-theme="light"] .cta-button:hover {
-    box-shadow: 0 0 10px rgba(5, 150, 105, 0.2);
+    box-shadow: 0 2px 4px rgba(4, 120, 87, 0.15) !important;
+    transform: translateY(-1px);
 }
 
 [data-theme="light"] .cta-button.primary:hover {
-    background: #059669;
-    color: white;
+    background: #047857 !important;
+    color: white !important;
 }
 
-/* Reduce overall brightness of green elements in dark mode */
-:root {
-    --accent-green-dimmed: rgba(57, 255, 20, 0.8);
-    --accent-green-subtle: rgba(57, 255, 20, 0.6);
-}
-
-/* Apply dimmed green to various elements */
-.terminal-cursor {
-    background-color: var(--accent-green-dimmed);
-}
-
-.nav-link::before {
-    background: var(--accent-green-dimmed);
-}
-
-.skill-progress {
-    background: linear-gradient(90deg, var(--accent-green-dimmed), rgba(0, 255, 65, 0.8));
-}
-
-/* Subtle neon effect - much less intense */
-.neon-text {
-    text-shadow: 
-        0 0 2px var(--accent-green-subtle),
-        0 0 4px var(--accent-green-subtle);
-}
-
-/* Remove aggressive glows from various elements */
+/* 8. REMOVE ALL EXCESSIVE GLOWS FROM DARK MODE */
+.terminal-window:hover,
 .project-card:hover,
 .skill-category:hover,
-.cert-card:hover {
-    box-shadow: 0 4px 12px rgba(57, 255, 20, 0.15); /* Much subtler glow */
+.cert-card:hover,
+.tech-item:hover {
+    box-shadow: 0 4px 8px rgba(57, 255, 20, 0.1) !important; /* Very subtle */
 }
 
-/* Tone down terminal glow */
-.terminal-window:hover {
-    box-shadow: 0 0 8px rgba(57, 255, 20, 0.2); /* Reduced from 0.6 */
+.cta-button:hover {
+    box-shadow: 0 2px 4px rgba(57, 255, 20, 0.15) !important;
 }
 
-/* Make loading dots less intense */
-.loading-dots span {
-    background-color: var(--accent-green-dimmed);
+/* 9. TONE DOWN NEON EFFECTS */
+.neon-text {
+    text-shadow: none !important; /* Remove neon effect completely */
 }
 
-/* Subtle improvements for overall eye comfort */
-.terminal-window {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="light"] .terminal-window {
-    box-shadow: 0 2px 8px rgba(30, 41, 59, 0.1);
+/* 10. ENSURE MOBILE NAVIGATION WORKS IN LIGHT MODE */
+@media (max-width: 768px) {
+    [data-theme="light"] .nav-menu {
+        background: rgba(248, 250, 252, 0.98) !important;
+        border-top-color: rgba(30, 41, 59, 0.15) !important;
+        box-shadow: 0 4px 6px rgba(30, 41, 59, 0.1) !important;
+    }
+    
+    [data-theme="light"] .nav-link {
+        border-bottom-color: rgba(30, 41, 59, 0.1) !important;
+    }
 }

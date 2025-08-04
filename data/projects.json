@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Platform",
+    "description": "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, order management, and admin dashboard with real-time analytics.",
+    "technologies": ["React", "Node.js", "MongoDB", "Express", "Stripe", "Socket.io", "JWT"],
+    "categories": ["full-stack", "react", "node"],
+    "github": "https://github.com/Gunangi/ecommerce-platform",
+    "demo": "https://ecommerce-demo.netlify.app",
+    "featured": true,
+    "status": "completed",
+    "year": "2024"
+  },
+  {
+    "id": 2,
+    "title": "Task Management App",
+    "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, team collaboration features, and comprehensive project tracking capabilities.",
+    "technologies": ["Next.js", "TypeScript", "PostgreSQL", "Socket.io", "Prisma", "NextAuth"],
+    "categories": ["full-stack", "nextjs", "react"],
+    "github": "https://github.com/Gunangi/task-manager",
+    "demo": "https://taskmanager-demo.vercel.app",
+    "featured": true,
+    "status": "completed",
+    "year": "2024"
+  },
+  {
+    "id": 3,
+    "title": "Weather Dashboard",
+    "description": "A beautiful weather dashboard with location-based forecasts, interactive maps, weather alerts, and detailed analytics with historical data visualization.",
+    "technologies": ["React", "Chart.js", "OpenWeather API", "Geolocation API", "CSS3", "LocalStorage"],
+    "categories": ["react", "frontend"],
+    "github": "https://github.com/Gunangi/weather-dashboard",
+    "demo": "https://weather-dashboard-demo.netlify.app",
+    "featured": true,
+    "status": "completed",
+    "year": "2023"
+  },
+  {
+    "id": 4,
+    "title": "Real-time Chat Application",
+    "description": "A modern chat application with real-time messaging, file sharing, emoji support, typing indicators, and multi-room functionality.",
+    "technologies": ["React", "Node.js", "Socket.io", "MongoDB", "Cloudinary", "JWT"],
+    "categories": ["full-stack", "react", "node"],
+    "github": "https://github.com/Gunangi/chat-app",
+    "demo": "https://realtime-chat-demo.herokuapp.com",
+    "featured": true,
+    "status": "completed",
+    "year": "2024"
+  },
+  {
+    "id": 5,
+    "title": "Portfolio Website",
+    "description": "This very portfolio website! Built with vanilla JavaScript, featuring terminal-inspired design, smooth animations, and responsive layout.",
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "CSS Grid", "Flexbox"],
+    "categories": ["frontend", "vanilla-js"],
+    "github": "https://github.com/Gunangi/Portfolio",
+    "demo": "#",
+    "featured": true,
+    "status": "completed",
+    "year": "2024"
+  },
+  {
+    "id": 6,
+    "title": "Blog Platform",
+    "description": "A full-featured blog platform with content management, user authentication, comment system, and SEO optimization.",
+    "technologies": ["Next.js", "MongoDB", "Tailwind CSS", "NextAuth", "MDX", "Vercel"],
+    "categories": ["full-stack", "nextjs", "react"],
+    "github": "https://github.com/Gunangi/blog-platform",
+    "demo": "https://blog-platform-demo.vercel.app",
+    "featured": false,
+    "status": "in-progress",
+    "year": "2024"
+  },
+  {
+    "id": 7,
+    "title": "Recipe Finder App",
+    "description": "A mobile-responsive recipe finder with ingredient-based search, nutritional information, and meal planning features.",
+    "technologies": ["React", "Spoonacular API", "CSS Modules", "Local Storage", "PWA"],
+    "categories": ["react", "frontend"],
+    "github": "https://github.com/Gunangi/recipe-finder",
+    "demo": "https://recipe-finder-demo.netlify.app",
+    "featured": false,
+    "status": "completed",
+    "year": "2023"
+  },
+  {
+    "id": 8,
+    "title": "Expense Tracker",
+    "description": "A personal finance management app with expense tracking, budget planning, and financial analytics with data visualization.",
+    "technologies": ["Python", "Django", "PostgreSQL", "Chart.js", "Bootstrap", "REST API"],
+    "categories": ["full-stack", "python"],
+    "github": "https://github.com/Gunangi/expense-tracker",
+    "demo": "https://expense-tracker-demo.herokuapp.com",
+    "featured": false,
+    "status": "completed",
+    "year": "2023"
+  }
+]
